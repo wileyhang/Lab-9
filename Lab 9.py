@@ -6,6 +6,14 @@ def encode(password):
 def decode(encoded_password):
     decoded = ''.join(str((int(digit) - 3) % 10) for digit in encoded_password)
     return decoded
+def decode(encoded_password):
+    decoded_pass_list = []
+    decoded = ''
+    for i in range(len(encoded_password)):
+        decoded_pass_list.append(int(encoded_password[i]) - 3)
+    for char in decoded_pass_list:
+        decoded += str(char)
+    return decoded
 
 
 def main():
